@@ -1,7 +1,6 @@
 import { fabric } from "fabric";
 import { CustomObject } from "../types/CustomObject";
 import { calculateTotalArea } from "./area";
-
 export const getUpdatedPoints = (rect: fabric.Polygon) => {
   var matrix = rect.calcTransformMatrix();
   return rect
@@ -139,7 +138,8 @@ export const editPoly = (poly, doEnable) => {
           actionHandler
         ),
         actionName: "modifyPolygon",
-      });
+        pointIndex: index, // tslint:disable
+      } as any);
       return acc;
     }, {});
   } else {
