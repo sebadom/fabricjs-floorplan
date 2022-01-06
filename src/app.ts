@@ -224,6 +224,7 @@ function edit(doEnable) {
 
 document.addEventListener("keydown", (e) => handleCtrl(true, e.code));
 document.addEventListener("keyup", (e) => handleCtrl(false, e.code));
+document.getElementById("addRoom").addEventListener("click", createEmptyRoom);
 
 function handleCtrl(doEnable, code) {
   if (code === "AltLeft" || code === "AltRight") {
